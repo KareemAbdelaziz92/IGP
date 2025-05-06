@@ -2,9 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: abc-retail-deployment
-  namespace: default    # ✅ Add this line if missing
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: abc-retail
@@ -14,8 +13,11 @@ spec:
         app: abc-retail
     spec:
       containers:
-      - name: abc-retail
+      - name: abc-retail-container
         image: kareem9263/abc-retail:latest
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred
+
 

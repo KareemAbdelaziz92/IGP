@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: abc-retail-container
-        image: kareem9263/abc-retail:latest
+        image: kareem9236/abc-retail:latest
         ports:
         - containerPort: 8080
       imagePullSecrets:
